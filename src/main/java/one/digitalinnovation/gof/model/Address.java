@@ -3,24 +3,15 @@ package one.digitalinnovation.gof.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Os atributos desse modelo foram gerados automaticamente pelo site
- * jsonschema2pojo.org. Para isso, usamos o JSON de retorno da API do ViaCEP.
- * 
- * @see <a href="https://www.jsonschema2pojo.org">jsonschema2pojo.org</a>
- * @see <a href="https://viacep.com.br">ViaCEP</a>
- * 
- * @author falvojr
- */
 @Entity
-public class Endereco {
+public class Address {
 
 	@Id
 	private String cep;
-	private String logradouro;
-	private String complemento;
-	private String bairro;
-	private String localidade;
+	private String publicArea;
+	private String complement;
+	private String district;
+	private String city;
 	private String uf;
 	private String ibge;
 	private String gia;
@@ -36,35 +27,35 @@ public class Endereco {
 	}
 
 	public String getLogradouro() {
-		return logradouro;
+		return publicArea;
 	}
 
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
+	public void setLogradouro(String publicArea) {
+		this.publicArea = publicArea;
 	}
 
 	public String getComplemento() {
-		return complemento;
+		return complement;
 	}
 
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public void setComplemento(String complement) {
+		this.complement = complement;
 	}
 
 	public String getBairro() {
-		return bairro;
+		return district;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setBairro(String district) {
+		this.district = district;
 	}
 
 	public String getLocalidade() {
-		return localidade;
+		return city;
 	}
 
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
+	public void setLocalidade(String city) {
+		this.city = city;
 	}
 
 	public String getUf() {

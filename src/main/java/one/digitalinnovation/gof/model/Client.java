@@ -7,14 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Cliente {
+public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String nome;
+	private String name;
 	@ManyToOne
-	private Endereco endereco;
+	private Address address;
 
 	public Long getId() {
 		return id;
@@ -25,19 +25,19 @@ public class Cliente {
 	}
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String name) {
+		this.name = name;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	public Address getEndereco() {
+		return address;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setEndereco(Address address) {
+		this.address = address;
 	}
 
 }
