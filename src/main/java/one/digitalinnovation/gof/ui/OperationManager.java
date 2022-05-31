@@ -1,14 +1,20 @@
 package one.digitalinnovation.gof.ui;
 
+import java.util.List;
 import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import one.digitalinnovation.gof.model.Account;
 import one.digitalinnovation.gof.model.CheckingAccount;
 import one.digitalinnovation.gof.model.Client;
 import one.digitalinnovation.gof.model.SavingsAccount;
+import one.digitalinnovation.gof.service.ClientService;
 
 public class OperationManager {
 
+	@Autowired
+	private ClientService clientService;
     private String[] ACCOUNT_KINDS = {"Savings Account", "Checking Account"};
     Scanner input;
     private Client client;
@@ -38,7 +44,13 @@ public class OperationManager {
         String CPF = input.next();
         System.out.print("Please enter your phone number: ");
         String phoneNumber = input.next();
-        client = new Client(null, name, CPF, phoneNumber);
+        Client newClient = new Client(null, name, CPF, phoneNumber);
+        List<Client> clients = (List<Client>) clientService.findAll();
+        for(Client client : clients)
+	        if(client.getCpf().equals(newClient.getCpf()));
+	        	this.client = clientService.findById(client.getId());
+	    if(this.client.equals(null))
+	    	this.client = newClient;
     }
 
     public void printSuccessfullMessage(){

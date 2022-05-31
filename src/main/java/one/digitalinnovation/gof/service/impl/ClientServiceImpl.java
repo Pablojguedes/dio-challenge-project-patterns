@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import one.digitalinnovation.gof.model.Client;
-import one.digitalinnovation.gof.model.ClientRepository;
+import one.digitalinnovation.gof.repositories.AddressRepository;
+import one.digitalinnovation.gof.repositories.ClientRepository;
 import one.digitalinnovation.gof.model.Address;
-import one.digitalinnovation.gof.model.AddressRepository;
 import one.digitalinnovation.gof.service.ClientService;
 import one.digitalinnovation.gof.service.ViaCepService;
 

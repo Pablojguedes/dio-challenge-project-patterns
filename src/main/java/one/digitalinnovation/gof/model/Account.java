@@ -1,5 +1,9 @@
 package one.digitalinnovation.gof.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import one.digitalinnovation.gof.exceptions.InvalidOperationException;
@@ -7,8 +11,11 @@ import one.digitalinnovation.gof.security.OperationValidator;
 
 public abstract class Account implements AccountInterface {
 	
+	
 	private static final int DEFAULT_AGENCY = 1;
-	private static int INCREMENTAL_ACCOUNT_NUMBER = 1;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	protected int agency;
 	protected int number;
 	protected double amount;
@@ -19,7 +26,6 @@ public abstract class Account implements AccountInterface {
 	
 	public Account(Client client) {
 		this.agency = Account.DEFAULT_AGENCY;
-		this.number = INCREMENTAL_ACCOUNT_NUMBER++;
 		this.client = client;
 	}
 

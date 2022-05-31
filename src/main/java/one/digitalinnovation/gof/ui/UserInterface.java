@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    public static String[] MAIN_MENU_OPERATIONS = {"Create Account", "Bank Services", "Info", "Leave"};
-    public static String[] BANK_SERVICES_MENU_OPERATIONS = {"Withdraw", "Deposit", "Extract"};
+    public String[] MAIN_MENU_OPERATIONS = {"Create Account", "Bank Services", "Info", "Leave"};
+    public String[] BANK_SERVICES_MENU_OPERATIONS = {"Withdraw", "Deposit", "Extract"};
 
-    public static void execute(Scanner input){
+    public void execute(Scanner input){
         System.out.println("Hello! You are talking with me, BankBot! How can i help you?");
         Menu mainMenu = new Menu(MAIN_MENU_OPERATIONS);
         mainMenu.printMenu();
