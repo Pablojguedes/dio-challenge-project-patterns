@@ -52,13 +52,13 @@ public class ClientServiceImpl implements ClientService {
 	}
 	
 	private void saveClientWithCep(Client client) {
-		String cep = client.getEndereco().getCep();
+		String cep = client.getAddress().getCep();
 		Address endereco = addressRepository.findById(cep).orElseGet(() -> {
 			Address newAddress = viaCepService.consultarCep(cep);
 			addressRepository.save(newAddress);
 			return newAddress;
 		});
-		client.setEndereco(endereco);
+		client.setAddress(endereco);
 		clientRepository.save(client);
 	}
 

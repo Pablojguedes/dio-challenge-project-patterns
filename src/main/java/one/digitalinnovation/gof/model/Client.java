@@ -15,6 +15,16 @@ public class Client {
 	private String name;
 	@ManyToOne
 	private Address address;
+	private String cpf;
+	private String phoneNumber;
+
+	public Client(Long id, String name, String cpf, String phoneNumber) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+		this.phoneNumber = phoneNumber;
+	}
 
 	public Long getId() {
 		return id;
@@ -24,20 +34,36 @@ public class Client {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String getName() {
 		return name;
 	}
 
-	public void setNome(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Address getEndereco() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setEndereco(Address address) {
+	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 }
